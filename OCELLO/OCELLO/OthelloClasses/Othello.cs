@@ -260,7 +260,15 @@ namespace Othello
             }
             Cell nowCell = table[nowRowIndex, nowColIndex];
 
-            if((nowCell.state & (CellState.empty | CellState.nextClickPlace)) > 0)
+            // 複数条件をbit演算で処理する方法
+            // var a  = (empty | nextClickPlace)  = 0b1100
+            // empty            & a == 0b0100 = 4 > 0
+            // nextClickPlace   & a == 0b1000 = 8 > 0
+            // white            & a == 0b0000 = 0 
+            // block            & a == 0b0000 = 0 
+            // 通常のif文
+            //if(nowCell.state == empty || nowCell.state == nextClickPlace)
+            if ((nowCell.state & (CellState.empty | CellState.nextClickPlace)) > 0)
             {
                 return false;
             }
