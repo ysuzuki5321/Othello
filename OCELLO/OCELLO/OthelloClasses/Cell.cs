@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Othello
 {
+    /// <summary>
+    /// Cell Class
+    /// </summary>
     public class Cell : INotifyPropertyChanged
     {
 
