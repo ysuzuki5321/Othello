@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Othello.OthelloClasses;
 using Othello.OthelloClasses.Player;
 using Utilitys;
@@ -130,7 +129,7 @@ namespace Othello
         }       
         private void Connection()
         {
-            Cursor.Current = Cursors.WaitCursor;
+            //Cursor.Current = Cursors.WaitCursor;
             const string conRequest = "Connection";
             bool connect = false;
             var sendTask = Task.Run(() =>
@@ -150,7 +149,7 @@ namespace Othello
             {
                 netWork.Send("Next");
             }
-            Cursor.Current = Cursors.Default;
+            //Cursor.Current = Cursors.Default;
         }
 
         private const int MIN_CELL_NUM = 6;
