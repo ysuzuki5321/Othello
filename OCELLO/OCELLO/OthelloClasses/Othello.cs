@@ -60,12 +60,12 @@ namespace Othello
 
                 if(cellStatesCount[CellState.empty] == 0)
                 {
-                    MessageBox.Show(cellStatesCount[playerColorConverter[players[0].myColor]].ToString());
+                    //MessageBox.Show(cellStatesCount[playerColorConverter[players[0].myColor]].ToString());
 
                 }
             };  
             players[0].TurnEnd = () => {
-                netWork.Send(NumberUtility.ConvertTableIndexToInt(
+                netWork.Send(NumberUtility.ConvertTableIndexToLong(
                     nowPlayer.selectCell.rowIndex, nowPlayer.selectCell.colIndex));
                 players[0].myTurn = false;
             };
